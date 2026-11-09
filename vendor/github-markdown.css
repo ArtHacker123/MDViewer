@@ -1,0 +1,1248 @@
+.mdv-markdown {
+  --base-size-16: 1rem;
+  --base-size-24: 1.5rem;
+  --base-size-4: 0.25rem;
+  --base-size-40: 2.5rem;
+  --base-size-8: 0.5rem;
+  --base-text-weight-medium: 500;
+  --base-text-weight-normal: 400;
+  --base-text-weight-semibold: 600;
+  --fontStack-monospace: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+  --fontStack-sansSerif: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  --fgColor-accent: Highlight;
+}
+@media (prefers-color-scheme: dark) {
+  .mdv-markdown {
+    /*dark */
+    color-scheme: dark;
+    --fgColor-accent: #4493f8;
+    --bgColor-attention-muted: #bb800926;
+    --bgColor-default: #0d1117;
+    --bgColor-muted: #151b23;
+    --bgColor-neutral-muted: #656c7633;
+    --borderColor-accent-emphasis: #1f6feb;
+    --borderColor-attention-emphasis: #9e6a03;
+    --borderColor-danger-emphasis: #da3633;
+    --borderColor-default: #3d444d;
+    --borderColor-done-emphasis: #8957e5;
+    --borderColor-success-emphasis: #238636;
+    --color-prettylights-syntax-brackethighlighter-angle: #9198a1;
+    --color-prettylights-syntax-brackethighlighter-unmatched: #f85149;
+    --color-prettylights-syntax-carriage-return-bg: #b62324;
+    --color-prettylights-syntax-carriage-return-text: #f0f6fc;
+    --color-prettylights-syntax-comment: #9198a1;
+    --color-prettylights-syntax-constant: #79c0ff;
+    --color-prettylights-syntax-constant-other-reference-link: #a5d6ff;
+    --color-prettylights-syntax-entity: #d2a8ff;
+    --color-prettylights-syntax-entity-tag: #7ee787;
+    --color-prettylights-syntax-keyword: #ff7b72;
+    --color-prettylights-syntax-markup-bold: #f0f6fc;
+    --color-prettylights-syntax-markup-changed-bg: #5a1e02;
+    --color-prettylights-syntax-markup-changed-text: #ffdfb6;
+    --color-prettylights-syntax-markup-deleted-bg: #67060c;
+    --color-prettylights-syntax-markup-deleted-text: #ffdcd7;
+    --color-prettylights-syntax-markup-heading: #1f6feb;
+    --color-prettylights-syntax-markup-ignored-bg: #1158c7;
+    --color-prettylights-syntax-markup-ignored-text: #f0f6fc;
+    --color-prettylights-syntax-markup-inserted-bg: #033a16;
+    --color-prettylights-syntax-markup-inserted-text: #aff5b4;
+    --color-prettylights-syntax-markup-italic: #f0f6fc;
+    --color-prettylights-syntax-markup-list: #f2cc60;
+    --color-prettylights-syntax-meta-diff-range: #d2a8ff;
+    --color-prettylights-syntax-storage-modifier-import: #f0f6fc;
+    --color-prettylights-syntax-string: #a5d6ff;
+    --color-prettylights-syntax-string-regexp: #7ee787;
+    --color-prettylights-syntax-sublimelinter-gutter-mark: #3d444d;
+    --color-prettylights-syntax-variable: #ffa657;
+    --fgColor-attention: #d29922;
+    --fgColor-danger: #f85149;
+    --fgColor-default: #f0f6fc;
+    --fgColor-done: #ab7df8;
+    --fgColor-muted: #9198a1;
+    --fgColor-success: #3fb950;
+    --borderColor-muted: #3d444db3;
+    --color-prettylights-syntax-invalid-illegal-bg: var(--bgColor-danger-muted);
+    --color-prettylights-syntax-invalid-illegal-text: var(--fgColor-danger);
+    --focus-outlineColor: var(--borderColor-accent-emphasis);
+    --borderColor-neutral-muted: var(--borderColor-muted);
+  }
+}
+@media (prefers-color-scheme: light) {
+  .mdv-markdown {
+    /*light */
+    color-scheme: light;
+    --fgColor-danger: #d1242f;
+    --bgColor-attention-muted: #fff8c5;
+    --bgColor-muted: #f6f8fa;
+    --bgColor-neutral-muted: #818b981f;
+    --borderColor-accent-emphasis: #0969da;
+    --borderColor-attention-emphasis: #9a6700;
+    --borderColor-danger-emphasis: #cf222e;
+    --borderColor-default: #d1d9e0;
+    --borderColor-done-emphasis: #8250df;
+    --borderColor-success-emphasis: #1a7f37;
+    --color-prettylights-syntax-brackethighlighter-angle: #59636e;
+    --color-prettylights-syntax-brackethighlighter-unmatched: #82071e;
+    --color-prettylights-syntax-carriage-return-bg: #cf222e;
+    --color-prettylights-syntax-carriage-return-text: #f6f8fa;
+    --color-prettylights-syntax-comment: #59636e;
+    --color-prettylights-syntax-constant: #0550ae;
+    --color-prettylights-syntax-constant-other-reference-link: #0a3069;
+    --color-prettylights-syntax-entity: #6639ba;
+    --color-prettylights-syntax-entity-tag: #0550ae;
+    --color-prettylights-syntax-invalid-illegal-text: var(--fgColor-danger);
+    --color-prettylights-syntax-keyword: #cf222e;
+    --color-prettylights-syntax-markup-changed-bg: #ffd8b5;
+    --color-prettylights-syntax-markup-changed-text: #953800;
+    --color-prettylights-syntax-markup-deleted-bg: #ffebe9;
+    --color-prettylights-syntax-markup-deleted-text: #82071e;
+    --color-prettylights-syntax-markup-heading: #0550ae;
+    --color-prettylights-syntax-markup-ignored-bg: #0550ae;
+    --color-prettylights-syntax-markup-ignored-text: #d1d9e0;
+    --color-prettylights-syntax-markup-inserted-bg: #dafbe1;
+    --color-prettylights-syntax-markup-inserted-text: #116329;
+    --color-prettylights-syntax-markup-list: #3b2300;
+    --color-prettylights-syntax-meta-diff-range: #8250df;
+    --color-prettylights-syntax-string: #0a3069;
+    --color-prettylights-syntax-string-regexp: #116329;
+    --color-prettylights-syntax-sublimelinter-gutter-mark: #818b98;
+    --color-prettylights-syntax-variable: #953800;
+    --fgColor-accent: #0969da;
+    --fgColor-attention: #9a6700;
+    --fgColor-done: #8250df;
+    --fgColor-muted: #59636e;
+    --fgColor-success: #1a7f37;
+    --bgColor-default: #ffffff;
+    --borderColor-muted: #d1d9e0b3;
+    --color-prettylights-syntax-invalid-illegal-bg: var(--bgColor-danger-muted);
+    --color-prettylights-syntax-markup-bold: #1f2328;
+    --color-prettylights-syntax-markup-italic: #1f2328;
+    --color-prettylights-syntax-storage-modifier-import: #1f2328;
+    --fgColor-default: #1f2328;
+    --focus-outlineColor: var(--borderColor-accent-emphasis);
+    --borderColor-neutral-muted: var(--borderColor-muted);
+  }
+}
+
+.mdv-markdown {
+  /** CSS default easing. Use for hover state changes and micro-interactions. */
+  /** Accelerating motion. Use for elements exiting the viewport (moving off-screen). */
+  /** Smooth acceleration and deceleration. Use for elements moving or morphing within the viewport. */
+  /** Decelerating motion. Use for elements entering the viewport or appearing on screen. */
+  /** Constant motion with no acceleration. Use for continuous animations like progress bars or loaders. */
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  margin: 0;
+  font-weight: var(--base-text-weight-normal, 400);
+  color: var(--fgColor-default);
+  background-color: var(--bgColor-default);
+  font-family: var(--fontStack-sansSerif, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji");
+  font-size: 16px;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.mdv-markdown a {
+  text-decoration: underline;
+  text-underline-offset: .2rem;
+}
+
+.mdv-markdown .octicon {
+  display: inline-block;
+  fill: currentColor;
+  vertical-align: text-bottom;
+}
+
+.mdv-markdown h1:hover .anchor .octicon-link:before,
+.mdv-markdown h2:hover .anchor .octicon-link:before,
+.mdv-markdown h3:hover .anchor .octicon-link:before,
+.mdv-markdown h4:hover .anchor .octicon-link:before,
+.mdv-markdown h5:hover .anchor .octicon-link:before,
+.mdv-markdown h6:hover .anchor .octicon-link:before {
+  width: 16px;
+  height: 16px;
+  content: ' ';
+  display: inline-block;
+  background-color: currentColor;
+  -webkit-mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' version='1.1' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg>");
+  mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' version='1.1' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg>");
+}
+
+.mdv-markdown details,
+.mdv-markdown figcaption,
+.mdv-markdown figure {
+  display: block;
+}
+
+.mdv-markdown summary {
+  display: list-item;
+}
+
+.mdv-markdown [hidden] {
+  display: none !important;
+}
+
+.mdv-markdown a {
+  background-color: rgba(0,0,0,0);
+  color: var(--fgColor-accent);
+  text-decoration: none;
+}
+
+.mdv-markdown abbr[title] {
+  border-bottom: none;
+  -webkit-text-decoration: underline dotted;
+  text-decoration: underline dotted;
+}
+
+.mdv-markdown b,
+.mdv-markdown strong {
+  font-weight: var(--base-text-weight-semibold, 600);
+}
+
+.mdv-markdown dfn {
+  font-style: italic;
+}
+
+.mdv-markdown h1 {
+  margin: .67em 0;
+  font-weight: var(--base-text-weight-semibold, 600);
+  padding-bottom: .3em;
+  font-size: 2em;
+  border-bottom: 1px solid var(--borderColor-muted);
+}
+
+.mdv-markdown mark {
+  background-color: var(--bgColor-attention-muted);
+  color: var(--fgColor-default);
+}
+
+.mdv-markdown small {
+  font-size: 90%;
+}
+
+.mdv-markdown sub,
+.mdv-markdown sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+.mdv-markdown sub {
+  bottom: -0.25em;
+}
+
+.mdv-markdown sup {
+  top: -0.5em;
+}
+
+.mdv-markdown img {
+  border-style: none;
+  max-width: 100%;
+  box-sizing: content-box;
+}
+
+.mdv-markdown code,
+.mdv-markdown kbd,
+.mdv-markdown pre,
+.mdv-markdown samp {
+  font-family: monospace;
+  font-size: 1em;
+}
+
+.mdv-markdown figure {
+  margin: 1em var(--base-size-40);
+}
+
+.mdv-markdown hr {
+  box-sizing: content-box;
+  overflow: hidden;
+  background: rgba(0,0,0,0);
+  border-bottom: 1px solid var(--borderColor-muted);
+  height: .25em;
+  padding: 0;
+  margin: var(--base-size-24) 0;
+  background-color: var(--borderColor-default);
+  border: 0;
+}
+
+.mdv-markdown input {
+  font: inherit;
+  margin: 0;
+  overflow: visible;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.mdv-markdown [type=button],
+.mdv-markdown [type=reset],
+.mdv-markdown [type=submit] {
+  -webkit-appearance: button;
+  appearance: button;
+}
+
+.mdv-markdown [type=checkbox],
+.mdv-markdown [type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.mdv-markdown [type=number]::-webkit-inner-spin-button,
+.mdv-markdown [type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+.mdv-markdown [type=search]::-webkit-search-cancel-button,
+.mdv-markdown [type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.mdv-markdown ::-webkit-input-placeholder {
+  color: inherit;
+  opacity: .54;
+}
+
+.mdv-markdown ::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  appearance: button;
+  font: inherit;
+}
+
+.mdv-markdown a:hover {
+  text-decoration: underline;
+}
+
+.mdv-markdown ::placeholder {
+  color: var(--fgColor-muted);
+  opacity: 1;
+}
+
+.mdv-markdown hr::before {
+  display: table;
+  content: "";
+}
+
+.mdv-markdown hr::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.mdv-markdown table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  overflow: auto;
+  font-variant: tabular-nums;
+}
+
+.mdv-markdown td,
+.mdv-markdown th {
+  padding: 0;
+}
+
+.mdv-markdown details summary {
+  cursor: pointer;
+}
+
+.mdv-markdown a:focus,
+.mdv-markdown [role=button]:focus,
+.mdv-markdown input[type=radio]:focus,
+.mdv-markdown input[type=checkbox]:focus {
+  outline: 2px solid var(--focus-outlineColor);
+  outline-offset: -2px;
+  box-shadow: none;
+}
+
+.mdv-markdown a:focus:not(:focus-visible),
+.mdv-markdown [role=button]:focus:not(:focus-visible),
+.mdv-markdown input[type=radio]:focus:not(:focus-visible),
+.mdv-markdown input[type=checkbox]:focus:not(:focus-visible) {
+  outline: solid 1px rgba(0,0,0,0);
+}
+
+.mdv-markdown a:focus-visible,
+.mdv-markdown [role=button]:focus-visible,
+.mdv-markdown input[type=radio]:focus-visible,
+.mdv-markdown input[type=checkbox]:focus-visible {
+  outline: 2px solid var(--focus-outlineColor);
+  outline-offset: -2px;
+  box-shadow: none;
+}
+
+.mdv-markdown a:not([class]):focus,
+.mdv-markdown a:not([class]):focus-visible,
+.mdv-markdown input[type=radio]:focus,
+.mdv-markdown input[type=radio]:focus-visible,
+.mdv-markdown input[type=checkbox]:focus,
+.mdv-markdown input[type=checkbox]:focus-visible {
+  outline-offset: 0;
+}
+
+.mdv-markdown kbd {
+  display: inline-block;
+  padding: var(--base-size-4);
+  font: 11px var(--fontStack-monospace, ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace);
+  line-height: 10px;
+  color: var(--fgColor-default);
+  vertical-align: middle;
+  background-color: var(--bgColor-muted);
+  border: solid 1px var(--borderColor-neutral-muted);
+  border-bottom-color: var(--borderColor-neutral-muted);
+  border-radius: 6px;
+  box-shadow: inset 0 -1px 0 var(--borderColor-neutral-muted);
+}
+
+.mdv-markdown h1,
+.mdv-markdown h2,
+.mdv-markdown h3,
+.mdv-markdown h4,
+.mdv-markdown h5,
+.mdv-markdown h6 {
+  margin-top: var(--base-size-24);
+  margin-bottom: var(--base-size-16);
+  font-weight: var(--base-text-weight-semibold, 600);
+  line-height: 1.25;
+}
+
+.mdv-markdown h2 {
+  font-weight: var(--base-text-weight-semibold, 600);
+  padding-bottom: .3em;
+  font-size: 1.5em;
+  border-bottom: 1px solid var(--borderColor-muted);
+}
+
+.mdv-markdown h3 {
+  font-weight: var(--base-text-weight-semibold, 600);
+  font-size: 1.25em;
+}
+
+.mdv-markdown h4 {
+  font-weight: var(--base-text-weight-semibold, 600);
+  font-size: 1em;
+}
+
+.mdv-markdown h5 {
+  font-weight: var(--base-text-weight-semibold, 600);
+  font-size: .875em;
+}
+
+.mdv-markdown h6 {
+  font-weight: var(--base-text-weight-semibold, 600);
+  font-size: .85em;
+  color: var(--fgColor-muted);
+}
+
+.mdv-markdown p {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.mdv-markdown blockquote {
+  margin: 0;
+  padding: 0 1em;
+  color: var(--fgColor-muted);
+  border-left: .25em solid var(--borderColor-default);
+}
+
+.mdv-markdown ul,
+.mdv-markdown ol {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 2em;
+}
+
+.mdv-markdown ol ol,
+.mdv-markdown ul ol {
+  list-style-type: lower-roman;
+}
+
+.mdv-markdown ul ul ol,
+.mdv-markdown ul ol ol,
+.mdv-markdown ol ul ol,
+.mdv-markdown ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.mdv-markdown dd {
+  margin-left: 0;
+}
+
+.mdv-markdown tt,
+.mdv-markdown code,
+.mdv-markdown samp {
+  font-family: var(--fontStack-monospace, ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace);
+  font-size: 12px;
+}
+
+.mdv-markdown pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: var(--fontStack-monospace, ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace);
+  font-size: 12px;
+  word-wrap: normal;
+}
+
+.mdv-markdown .octicon {
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.mdv-markdown input::-webkit-outer-spin-button,
+.mdv-markdown input::-webkit-inner-spin-button {
+  margin: 0;
+  appearance: none;
+}
+
+.mdv-markdown .mr-2 {
+  margin-right: var(--base-size-8, 8px) !important;
+}
+
+.mdv-markdown::before {
+  display: table;
+  content: "";
+}
+
+.mdv-markdown::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.mdv-markdown>*:first-child {
+  margin-top: 0 !important;
+}
+
+.mdv-markdown>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.mdv-markdown a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
+
+.mdv-markdown .absent {
+  color: var(--fgColor-danger);
+}
+
+.mdv-markdown .anchor {
+  float: left;
+  padding-right: var(--base-size-4);
+  margin-left: -20px;
+  line-height: 1;
+}
+
+.mdv-markdown .anchor:focus {
+  outline: none;
+}
+
+.mdv-markdown p,
+.mdv-markdown blockquote,
+.mdv-markdown ul,
+.mdv-markdown ol,
+.mdv-markdown dl,
+.mdv-markdown table,
+.mdv-markdown pre,
+.mdv-markdown details {
+  margin-top: 0;
+  margin-bottom: var(--base-size-16);
+}
+
+.mdv-markdown blockquote>:first-child {
+  margin-top: 0;
+}
+
+.mdv-markdown blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.mdv-markdown h1 .octicon-link,
+.mdv-markdown h2 .octicon-link,
+.mdv-markdown h3 .octicon-link,
+.mdv-markdown h4 .octicon-link,
+.mdv-markdown h5 .octicon-link,
+.mdv-markdown h6 .octicon-link {
+  color: var(--fgColor-default);
+  vertical-align: middle;
+  visibility: hidden;
+}
+
+.mdv-markdown h1:hover .anchor,
+.mdv-markdown h2:hover .anchor,
+.mdv-markdown h3:hover .anchor,
+.mdv-markdown h4:hover .anchor,
+.mdv-markdown h5:hover .anchor,
+.mdv-markdown h6:hover .anchor {
+  text-decoration: none;
+}
+
+.mdv-markdown h1:hover .anchor .octicon-link,
+.mdv-markdown h2:hover .anchor .octicon-link,
+.mdv-markdown h3:hover .anchor .octicon-link,
+.mdv-markdown h4:hover .anchor .octicon-link,
+.mdv-markdown h5:hover .anchor .octicon-link,
+.mdv-markdown h6:hover .anchor .octicon-link {
+  visibility: visible;
+}
+
+.mdv-markdown h1 tt,
+.mdv-markdown h1 code,
+.mdv-markdown h2 tt,
+.mdv-markdown h2 code,
+.mdv-markdown h3 tt,
+.mdv-markdown h3 code,
+.mdv-markdown h4 tt,
+.mdv-markdown h4 code,
+.mdv-markdown h5 tt,
+.mdv-markdown h5 code,
+.mdv-markdown h6 tt,
+.mdv-markdown h6 code {
+  padding: 0 .2em;
+  font-size: inherit;
+}
+
+.mdv-markdown summary h1,
+.mdv-markdown summary h2,
+.mdv-markdown summary h3,
+.mdv-markdown summary h4,
+.mdv-markdown summary h5,
+.mdv-markdown summary h6 {
+  display: inline-block;
+}
+
+.mdv-markdown summary h1 .anchor,
+.mdv-markdown summary h2 .anchor,
+.mdv-markdown summary h3 .anchor,
+.mdv-markdown summary h4 .anchor,
+.mdv-markdown summary h5 .anchor,
+.mdv-markdown summary h6 .anchor {
+  margin-left: -40px;
+}
+
+.mdv-markdown summary h1,
+.mdv-markdown summary h2 {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.mdv-markdown ul.no-list,
+.mdv-markdown ol.no-list {
+  padding: 0;
+  list-style-type: none;
+}
+
+.mdv-markdown ol[type="a s"] {
+  list-style-type: lower-alpha;
+}
+
+.mdv-markdown ol[type="A s"] {
+  list-style-type: upper-alpha;
+}
+
+.mdv-markdown ol[type="i s"] {
+  list-style-type: lower-roman;
+}
+
+.mdv-markdown ol[type="I s"] {
+  list-style-type: upper-roman;
+}
+
+.mdv-markdown ol[type="1"] {
+  list-style-type: decimal;
+}
+
+.mdv-markdown div>ol:not([type]) {
+  list-style-type: decimal;
+}
+
+.mdv-markdown ul ul,
+.mdv-markdown ul ol,
+.mdv-markdown ol ol,
+.mdv-markdown ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.mdv-markdown li>p {
+  margin-top: var(--base-size-16);
+}
+
+.mdv-markdown li+li {
+  margin-top: .25em;
+}
+
+.mdv-markdown dl {
+  padding: 0;
+}
+
+.mdv-markdown dl dt {
+  padding: 0;
+  margin-top: var(--base-size-16);
+  font-size: 1em;
+  font-style: italic;
+  font-weight: var(--base-text-weight-semibold, 600);
+}
+
+.mdv-markdown dl dd {
+  padding: 0 var(--base-size-16);
+  margin-bottom: var(--base-size-16);
+}
+
+.mdv-markdown table th {
+  font-weight: var(--base-text-weight-semibold, 600);
+}
+
+.mdv-markdown table th,
+.mdv-markdown table td {
+  padding: 6px 13px;
+  border: 1px solid var(--borderColor-default);
+}
+
+.mdv-markdown table td>:last-child {
+  margin-bottom: 0;
+}
+
+.mdv-markdown table tr {
+  background-color: var(--bgColor-default);
+  border-top: 1px solid var(--borderColor-muted);
+}
+
+.mdv-markdown table tr:nth-child(2n) {
+  background-color: var(--bgColor-muted);
+}
+
+.mdv-markdown table img {
+  background-color: rgba(0,0,0,0);
+}
+
+.mdv-markdown img[align=right] {
+  padding-left: 20px;
+}
+
+.mdv-markdown img[align=left] {
+  padding-right: 20px;
+}
+
+.mdv-markdown .emoji {
+  max-width: none;
+  vertical-align: text-top;
+  background-color: rgba(0,0,0,0);
+}
+
+.mdv-markdown span.frame {
+  display: block;
+  overflow: hidden;
+}
+
+.mdv-markdown span.frame>span {
+  display: block;
+  float: left;
+  width: auto;
+  padding: 7px;
+  margin: 13px 0 0;
+  overflow: hidden;
+  border: 1px solid var(--borderColor-default);
+}
+
+.mdv-markdown span.frame span img {
+  display: block;
+  float: left;
+}
+
+.mdv-markdown span.frame span span {
+  display: block;
+  padding: 5px 0 0;
+  clear: both;
+  color: var(--fgColor-default);
+}
+
+.mdv-markdown span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+
+.mdv-markdown span.align-center>span {
+  display: block;
+  margin: 13px auto 0;
+  overflow: hidden;
+  text-align: center;
+}
+
+.mdv-markdown span.align-center span img {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.mdv-markdown span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+
+.mdv-markdown span.align-right>span {
+  display: block;
+  margin: 13px 0 0;
+  overflow: hidden;
+  text-align: right;
+}
+
+.mdv-markdown span.align-right span img {
+  margin: 0;
+  text-align: right;
+}
+
+.mdv-markdown span.float-left {
+  display: block;
+  float: left;
+  margin-right: 13px;
+  overflow: hidden;
+}
+
+.mdv-markdown span.float-left span {
+  margin: 13px 0 0;
+}
+
+.mdv-markdown span.float-right {
+  display: block;
+  float: right;
+  margin-left: 13px;
+  overflow: hidden;
+}
+
+.mdv-markdown span.float-right>span {
+  display: block;
+  margin: 13px auto 0;
+  overflow: hidden;
+  text-align: right;
+}
+
+.mdv-markdown code,
+.mdv-markdown tt {
+  padding: .2em .4em;
+  margin: 0;
+  font-size: 85%;
+  white-space: break-spaces;
+  background-color: var(--bgColor-neutral-muted);
+  border-radius: 6px;
+}
+
+.mdv-markdown code br,
+.mdv-markdown tt br {
+  display: none;
+}
+
+.mdv-markdown del code {
+  text-decoration: inherit;
+}
+
+.mdv-markdown samp {
+  font-size: 85%;
+}
+
+.mdv-markdown pre code {
+  font-size: 100%;
+}
+
+.mdv-markdown pre>code {
+  padding: 0;
+  margin: 0;
+  word-break: normal;
+  white-space: pre;
+  background: rgba(0,0,0,0);
+  border: 0;
+}
+
+.mdv-markdown .highlight {
+  margin-bottom: var(--base-size-16);
+}
+
+.mdv-markdown .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.mdv-markdown .highlight pre,
+.mdv-markdown pre {
+  padding: var(--base-size-16);
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  color: var(--fgColor-default);
+  background-color: var(--bgColor-muted);
+  border-radius: 6px;
+}
+
+.mdv-markdown pre code,
+.mdv-markdown pre tt {
+  display: inline;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: rgba(0,0,0,0);
+  border: 0;
+}
+
+.mdv-markdown .csv-data td,
+.mdv-markdown .csv-data th {
+  padding: 5px;
+  overflow: hidden;
+  font-size: 12px;
+  line-height: 1;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.mdv-markdown .csv-data .blob-num {
+  padding: 10px var(--base-size-8) 9px;
+  text-align: right;
+  background: var(--bgColor-default);
+  border: 0;
+}
+
+.mdv-markdown .csv-data tr {
+  border-top: 0;
+}
+
+.mdv-markdown .csv-data th {
+  font-weight: var(--base-text-weight-semibold, 600);
+  background: var(--bgColor-muted);
+  border-top: 0;
+}
+
+.mdv-markdown [data-footnote-ref]::before {
+  content: "[";
+}
+
+.mdv-markdown [data-footnote-ref]::after {
+  content: "]";
+}
+
+.mdv-markdown .footnotes {
+  font-size: 12px;
+  color: var(--fgColor-muted);
+  border-top: 1px solid var(--borderColor-default);
+}
+
+.mdv-markdown .footnotes ol {
+  padding-left: var(--base-size-16);
+}
+
+.mdv-markdown .footnotes ol ul {
+  display: inline-block;
+  padding-left: var(--base-size-16);
+  margin-top: var(--base-size-16);
+}
+
+.mdv-markdown .footnotes li {
+  position: relative;
+}
+
+.mdv-markdown .footnotes li:target::before {
+  position: absolute;
+  top: calc(var(--base-size-8)*-1);
+  right: calc(var(--base-size-8)*-1);
+  bottom: calc(var(--base-size-8)*-1);
+  left: calc(var(--base-size-24)*-1);
+  pointer-events: none;
+  content: "";
+  border: 2px solid var(--borderColor-accent-emphasis);
+  border-radius: 6px;
+}
+
+.mdv-markdown .footnotes li:target {
+  color: var(--fgColor-default);
+}
+
+.mdv-markdown .footnotes .data-footnote-backref g-emoji {
+  font-family: monospace;
+}
+
+.mdv-markdown .pl-c {
+  color: var(--color-prettylights-syntax-comment);
+}
+
+.mdv-markdown .pl-c1,
+.mdv-markdown .pl-s .pl-v {
+  color: var(--color-prettylights-syntax-constant);
+}
+
+.mdv-markdown .pl-e,
+.mdv-markdown .pl-en {
+  color: var(--color-prettylights-syntax-entity);
+}
+
+.mdv-markdown .pl-smi,
+.mdv-markdown .pl-s .pl-s1 {
+  color: var(--color-prettylights-syntax-storage-modifier-import);
+}
+
+.mdv-markdown .pl-ent {
+  color: var(--color-prettylights-syntax-entity-tag);
+}
+
+.mdv-markdown .pl-k {
+  color: var(--color-prettylights-syntax-keyword);
+}
+
+.mdv-markdown .pl-s,
+.mdv-markdown .pl-pds,
+.mdv-markdown .pl-s .pl-pse .pl-s1,
+.mdv-markdown .pl-sr,
+.mdv-markdown .pl-sr .pl-cce,
+.mdv-markdown .pl-sr .pl-sre,
+.mdv-markdown .pl-sr .pl-sra {
+  color: var(--color-prettylights-syntax-string);
+}
+
+.mdv-markdown .pl-v,
+.mdv-markdown .pl-smw {
+  color: var(--color-prettylights-syntax-variable);
+}
+
+.mdv-markdown .pl-bu {
+  color: var(--color-prettylights-syntax-brackethighlighter-unmatched);
+}
+
+.mdv-markdown .pl-ii {
+  color: var(--color-prettylights-syntax-invalid-illegal-text);
+  background-color: var(--color-prettylights-syntax-invalid-illegal-bg);
+}
+
+.mdv-markdown .pl-c2 {
+  color: var(--color-prettylights-syntax-carriage-return-text);
+  background-color: var(--color-prettylights-syntax-carriage-return-bg);
+}
+
+.mdv-markdown .pl-sr .pl-cce {
+  font-weight: bold;
+  color: var(--color-prettylights-syntax-string-regexp);
+}
+
+.mdv-markdown .pl-ml {
+  color: var(--color-prettylights-syntax-markup-list);
+}
+
+.mdv-markdown .pl-mh,
+.mdv-markdown .pl-mh .pl-en,
+.mdv-markdown .pl-ms {
+  font-weight: bold;
+  color: var(--color-prettylights-syntax-markup-heading);
+}
+
+.mdv-markdown .pl-mi {
+  font-style: italic;
+  color: var(--color-prettylights-syntax-markup-italic);
+}
+
+.mdv-markdown .pl-mb {
+  font-weight: bold;
+  color: var(--color-prettylights-syntax-markup-bold);
+}
+
+.mdv-markdown .pl-md {
+  color: var(--color-prettylights-syntax-markup-deleted-text);
+  background-color: var(--color-prettylights-syntax-markup-deleted-bg);
+}
+
+.mdv-markdown .pl-mi1 {
+  color: var(--color-prettylights-syntax-markup-inserted-text);
+  background-color: var(--color-prettylights-syntax-markup-inserted-bg);
+}
+
+.mdv-markdown .pl-mc {
+  color: var(--color-prettylights-syntax-markup-changed-text);
+  background-color: var(--color-prettylights-syntax-markup-changed-bg);
+}
+
+.mdv-markdown .pl-mi2 {
+  color: var(--color-prettylights-syntax-markup-ignored-text);
+  background-color: var(--color-prettylights-syntax-markup-ignored-bg);
+}
+
+.mdv-markdown .pl-mdr {
+  font-weight: bold;
+  color: var(--color-prettylights-syntax-meta-diff-range);
+}
+
+.mdv-markdown .pl-ba {
+  color: var(--color-prettylights-syntax-brackethighlighter-angle);
+}
+
+.mdv-markdown .pl-sg {
+  color: var(--color-prettylights-syntax-sublimelinter-gutter-mark);
+}
+
+.mdv-markdown .pl-corl {
+  text-decoration: underline;
+  color: var(--color-prettylights-syntax-constant-other-reference-link);
+}
+
+.mdv-markdown [role=button]:focus:not(:focus-visible),
+.mdv-markdown [role=tabpanel][tabindex="0"]:focus:not(:focus-visible),
+.mdv-markdown button:focus:not(:focus-visible),
+.mdv-markdown summary:focus:not(:focus-visible),
+.mdv-markdown a:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.mdv-markdown [tabindex="0"]:focus:not(:focus-visible),
+.mdv-markdown details-dialog:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.mdv-markdown g-emoji {
+  display: inline-block;
+  min-width: 1ch;
+  font-family: "Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 1em;
+  font-style: normal !important;
+  font-weight: var(--base-text-weight-normal, 400);
+  line-height: 1;
+  vertical-align: -0.075em;
+}
+
+.mdv-markdown g-emoji img {
+  width: 1em;
+  height: 1em;
+}
+
+.mdv-markdown a:has(>p,>div,>pre,>blockquote) {
+  display: block;
+}
+
+.mdv-markdown a:has(>p,>div,>pre,>blockquote):not(:has(.snippet-clipboard-content,>pre)) {
+  width: fit-content;
+}
+
+.mdv-markdown a:has(>p,>div,>pre,>blockquote):has(.snippet-clipboard-content,>pre):focus-visible {
+  outline: 2px solid var(--focus-outlineColor);
+  outline-offset: 2px;
+}
+
+.mdv-markdown .task-list-item {
+  list-style-type: none;
+}
+
+.mdv-markdown .task-list-item label {
+  font-weight: var(--base-text-weight-normal, 400);
+}
+
+.mdv-markdown .task-list-item.enabled label {
+  cursor: pointer;
+}
+
+.mdv-markdown .task-list-item+.task-list-item {
+  margin-top: var(--base-size-4);
+}
+
+.mdv-markdown .task-list-item .handle {
+  display: none;
+}
+
+.mdv-markdown .task-list-item-checkbox {
+  margin: 0 .2em .25em -1.4em;
+  vertical-align: middle;
+}
+
+.mdv-markdown ul:dir(rtl) .task-list-item-checkbox {
+  margin: 0 -1.6em .25em .2em;
+}
+
+.mdv-markdown ol:dir(rtl) .task-list-item-checkbox {
+  margin: 0 -1.6em .25em .2em;
+}
+
+.mdv-markdown .contains-task-list:hover .task-list-item-convert-container,
+.mdv-markdown .contains-task-list:focus-within .task-list-item-convert-container {
+  display: block;
+  width: auto;
+  height: 24px;
+  overflow: visible;
+  clip-path: none;
+}
+
+.mdv-markdown ::-webkit-calendar-picker-indicator {
+  filter: invert(50%);
+}
+
+.mdv-markdown .markdown-alert {
+  padding: var(--base-size-8) var(--base-size-16);
+  margin-bottom: var(--base-size-16);
+  color: inherit;
+  border-left: .25em solid var(--borderColor-default);
+}
+
+.mdv-markdown .markdown-alert>:first-child {
+  margin-top: 0;
+}
+
+.mdv-markdown .markdown-alert>:last-child {
+  margin-bottom: 0;
+}
+
+.mdv-markdown .markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: var(--base-text-weight-medium, 500);
+  align-items: center;
+  line-height: 1;
+}
+
+.mdv-markdown .markdown-alert.markdown-alert-note {
+  border-left-color: var(--borderColor-accent-emphasis);
+}
+
+.mdv-markdown .markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--fgColor-accent);
+}
+
+.mdv-markdown .markdown-alert.markdown-alert-important {
+  border-left-color: var(--borderColor-done-emphasis);
+}
+
+.mdv-markdown .markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--fgColor-done);
+}
+
+.mdv-markdown .markdown-alert.markdown-alert-warning {
+  border-left-color: var(--borderColor-attention-emphasis);
+}
+
+.mdv-markdown .markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--fgColor-attention);
+}
+
+.mdv-markdown .markdown-alert.markdown-alert-tip {
+  border-left-color: var(--borderColor-success-emphasis);
+}
+
+.mdv-markdown .markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--fgColor-success);
+}
+
+.mdv-markdown .markdown-alert.markdown-alert-caution {
+  border-left-color: var(--borderColor-danger-emphasis);
+}
+
+.mdv-markdown .markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--fgColor-danger);
+}
+
+.mdv-markdown>*:first-child>.heading-element:first-child {
+  margin-top: 0 !important;
+}
+
+.mdv-markdown .highlight pre:has(+.zeroclipboard-container) {
+  min-height: 52px;
+}
+

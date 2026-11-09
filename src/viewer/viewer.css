@@ -1,0 +1,148 @@
+.mdv-viewer .mdv-toolbar {
+  flex-wrap: wrap;
+}
+
+.mdv-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.mdv-brand img {
+  border-radius: 4px;
+}
+
+.mdv-url-form {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.mdv-url-form input {
+  width: 260px;
+  max-width: 32vw;
+  padding: 6px 10px;
+  box-sizing: border-box;
+  border: 1px solid var(--mdv-border);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--mdv-fg);
+  font: inherit;
+  font-size: 13px;
+}
+
+.mdv-url-form input::placeholder {
+  color: var(--mdv-muted);
+}
+
+.mdv-url-form input:focus {
+  outline: 2px solid var(--mdv-accent);
+  outline-offset: -1px;
+}
+
+.mdv-viewer-main {
+  min-height: calc(100vh - 49px);
+}
+
+.mdv-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 49px);
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.mdv-empty[hidden],
+.mdv-viewer-content[hidden] {
+  display: none !important;
+}
+
+.mdv-dropzone {
+  width: min(720px, 100%);
+  padding: 48px 24px;
+  box-sizing: border-box;
+  border: 2px dashed var(--mdv-border);
+  border-radius: 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.mdv-dropzone:hover,
+.mdv-dropzone.is-dragover {
+  border-color: var(--mdv-accent);
+  background: var(--mdv-hover);
+}
+
+.mdv-dropzone svg {
+  width: 48px;
+  height: 48px;
+  color: var(--mdv-accent);
+  opacity: 0.85;
+}
+
+.mdv-dropzone h1 {
+  margin: 16px 0 8px;
+  font-size: 20px;
+}
+
+.mdv-dropzone p {
+  max-width: 540px;
+  margin: 0 auto 20px;
+  color: var(--mdv-muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.mdv-btn-primary {
+  border-color: var(--mdv-accent);
+  background: var(--mdv-accent);
+  color: #ffffff;
+}
+
+.mdv-btn-primary:hover {
+  background: var(--mdv-accent);
+  filter: brightness(1.08);
+}
+
+.mdv-btn-primary.is-attention {
+  animation: mdv-attention 1.2s ease 2;
+}
+
+@keyframes mdv-attention {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(9, 105, 218, 0.45);
+  }
+
+  50% {
+    box-shadow: 0 0 0 8px rgba(9, 105, 218, 0);
+  }
+}
+
+.mdv-error .mdv-btn {
+  margin-top: 12px;
+}
+
+@media (max-width: 900px) {
+  .mdv-url-form input {
+    width: 150px;
+  }
+}
+
+@media (max-width: 640px) {
+  .mdv-url-form {
+    order: 10;
+    width: 100%;
+  }
+
+  .mdv-url-form input {
+    flex: 1;
+    width: auto;
+    max-width: none;
+  }
+}

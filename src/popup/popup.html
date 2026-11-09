@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Markdown 查看器</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup">
+    <div class="head">
+      <img src="../../icons/icon48.png" alt="" width="32" height="32">
+      <div>
+        <div class="name">Markdown 查看器</div>
+        <div class="ver">v1.0.0</div>
+      </div>
+    </div>
+
+    <button type="button" class="primary" id="openViewer">打开查看器</button>
+    <button type="button" id="openFile">打开本地 .md 文件</button>
+
+    <p class="hint">直接打开以 .md 结尾的链接会自动渲染。若要自动渲染本地文件，请在扩展详情页开启“允许访问文件网址”。</p>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

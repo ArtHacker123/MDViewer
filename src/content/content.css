@@ -1,0 +1,15 @@
+html.mdv-active,
+html.mdv-active body {
+  margin: 0 !important;
+  padding: 0 !important;
+  background: var(--mdv-bg) !important;
+}
+
+html.mdv-active body {
+  overflow-x: hidden;
+  color: var(--mdv-fg);
+}
+
+html.mdv-active {
+  scroll-behavior: smooth;
+}
